@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: ./build
+    command: npm start
+    working_dir: /opt/web
+    image: drnext
+    ports:
+      - 3000:18000
+    networks:
+      - drnext
+
+networks:
+  drnext:
+    driver: bridge
+
